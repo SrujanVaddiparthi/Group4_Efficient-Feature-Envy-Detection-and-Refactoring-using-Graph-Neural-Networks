@@ -67,7 +67,7 @@ The amount of slides, probably 5. Titles are to be the questions below.
 - **SCG formulates the detection task;**
   - **Node binary classification problem** on the method call graph.  
   - Introduces the concept of **“Calling strength”** to quantify the strength of method invocations in the call graph.  
-  - Converts the method call graph to a **method-class call graph representation**.  
+  - ***This is how it builds upon the existing studies***: Converts the method call graph to a **method-class call graph representation**.  
   - Recommends moving the **smelly method** to the external class with the **highest calling strength**.  
 - Presents **SFFL (Symmetric Feature Fusion Learning)** to address the feature envy refactoring problem.  
 - Collects the following stuff from a project:
