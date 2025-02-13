@@ -1,5 +1,6 @@
-1st Slide:
+1st Slide: Intro & Background
 - # Efficient Feature Envy Detection and Refactoring Based on Graph Neural Network
+
 - Keywords:
     - Technical Debt(TD): the implied cost of additional work in the future resulting from 
     choosing an expedient solution over a more robust one in software development.
@@ -29,4 +30,27 @@
         methods from.
 
 
-2nd Slide onwards:
+2nd Slide onwards: Open Investigation
+
+- Existing Studies:
+    - Identified that feature envy is present in all long methods and god classes.
+        Long Method- A Method that does too many tasks and is excessively long.
+        God Class - A Class that takes on too many responsibility.
+        Hence, it points out a major problem that needs to be detected, and gives clues 
+        to develop processes to refactor it.
+    - Existing approaches fail to exploit the fundamental method call relationships.  
+        - They manually designed expressions to convert the method invocation information 
+        into distances, which results in bad detection performance.
+        - The input format used is not good enough to identify related samples, for example:
+            - Method - Class relationships could help in identifying related samples.
+        Hence, it leads to poor refactoring capability.
+    
+- their limitations, 
+    - We argue that the method invocation relationship is the most significant manifes-
+    tation of feature envy, which can be highly intricate within a project. To visualize
+    these relationships, we utilize Gephi1 to construct the method call graph of Realm-
+    java as an example
+    
+- proposed solution:
+
+    
