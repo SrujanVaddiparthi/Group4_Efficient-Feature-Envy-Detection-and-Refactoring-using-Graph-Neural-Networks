@@ -1,0 +1,32 @@
+1st Slide:
+- # Efficient Feature Envy Detection and Refactoring Based on Graph Neural Network
+- Keywords:
+    - Technical Debt(TD): the implied cost of additional work in the future resulting from 
+    choosing an expedient solution over a more robust one in software development.
+    - Code smell: serious form of TD which is confusing, complex, or harmful design patters 
+    in source code
+    - Feature Envy: most common code smell. Refers to a method that is more interested in an 
+    external class than its enclosing class. Misplaced method. 
+    - SMOTE Call Graph (SCG): a GNN based approach to address the problems of detecting and 
+    refactoring feature envy.
+    - Calling Strength: is a concept that quantifies the strength of method invocations in the 
+    call graph
+    - Symmetric Feature Fusion Learning (SFFL): Obtains graphical representations of methods-classes. 
+    Another approach to address the problems of detecting and refactoring feature envy. 
+    - Invocation: number of times method is called
+    - Ownership: the class which the method belongs to
+    - Position: where the method is located in the code.
+    - Coupling: a class A is coupled with class B if A affects B and vice versa.
+    - 
+    
+- Introduction and Background:
+    Feature Envy, the most common type of code smell, which is a form of TD,
+        - reduces the cohesion of its own class
+        - increases the coupling between classes. It's always better to have 
+        less coupling.
+    Best way to Handle it: 
+        Move the feature envy method to the class from which it calls too many
+        methods from.
+
+
+2nd Slide onwards:
