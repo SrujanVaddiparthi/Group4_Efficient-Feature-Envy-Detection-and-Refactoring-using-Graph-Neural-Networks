@@ -1,5 +1,4 @@
-### Open Investigation  
-
+### Open Investigations
 #### Understanding Feature Envy and Its Challenges  
 - Feature Envy is when a method depends more on another class than its own.  
 - This makes code harder to maintain because it increases dependencies.  
