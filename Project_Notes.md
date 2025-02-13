@@ -3,7 +3,7 @@
 ## Project Guidelines By Prof
 
 ### Phase 1
-What exactly do we want to do with this project.  
+What exactly we want to do with this project.  
 “I am going to duplicate what the paper did.”  
 Its like a contract between prof and us.  
 Eventually we can take it up as a capstone or thesis or whatever.  
@@ -42,8 +42,15 @@ The amount of slides, probably 5. Titles are to be the questions below.
 - Additionally, it converts the method-method call graph into a method-class call graph and recommends the smelly method to the external class with the highest calling strength.  
 
 ### Introduction:
+- Developers aim to write efficient , redable and maintainable code.
+-  Real - world constraints like time and budget pressures force comprmises.
+- These leads to Technical Debt (TD) .which is a hidden cost !!!
 - **Code smells**, one of the most serious forms of **TD (Technical Debt)**, refer to the confusing, complex, or even harmful design patterns in source code.  
-- **2 well-known code smells:** long methods & god classes (Both of these classes violate the **Single Responsibility Principle**).  
+- **2 well-known code smells:** - long methods & god classes
+- a).  Long Method- A Method that does too many tasks and is excessively long.
+- b). God Class - A Class that takes on too many responsibility.
+- Studies show-both code smells often appear together!
+-  (Both of these classes violate the **Single Responsibility Principle**).  
 - **Feature Envy** : most common code smells; refers to a method that is more interested in an external class than its enclosing class.  
   - This **“interest”** is manifested in two aspects:
     - Its invocation of methods in the class ( when the particular method in class A is calling too many methods from another class B)  
@@ -64,13 +71,13 @@ The amount of slides, probably 5. Titles are to be the questions below.
   - Recommends moving the **smelly method** to the external class with the **highest calling strength**.  
 - Presents **SFFL (Symmetric Feature Fusion Learning)** to address the feature envy refactoring problem.  
 - Collects the following stuff from a project:
-  - **Invocation** (no. of times method is called)  
-  - **Ownership** (the class which it belongs to)  
+  - **Invocation** (Indicates which method calls which)  
+  - **Ownership** (Indicates which method belongs to which class)  
   - **Position** (where the method is located in the code)  
-  - **Semantic information** of a project  
+  - **Semantic information** ( Meaning of the method and its purpose) 
 - Encodes them into **four directed heterogeneous graphs**:
   - **Nodes:** methods & classes  
-  - **Edges:** invocation or ownership relationships between them.  
+  - **Edges:** invocation or ownership relationships between them.
 - Hence **SFFL introduces a link prediction** to generate the adjacency matrix representing **ownership relationships b/w methods and classes**.  
 
 ### Why two methods though?
