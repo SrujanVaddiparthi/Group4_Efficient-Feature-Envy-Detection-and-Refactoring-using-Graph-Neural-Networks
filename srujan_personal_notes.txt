@@ -18,7 +18,7 @@
     - Ownership: the class which the method belongs to
     - Position: where the method is located in the code.
     - Coupling: a class A is coupled with class B if A affects B and vice versa.
-    - 
+
     
 - Introduction and Background:
     Feature Envy, the most common type of code smell, which is a form of TD,
@@ -45,12 +45,45 @@
             - Method - Class relationships could help in identifying related samples.
         Hence, it leads to poor refactoring capability.
     
-- their limitations, 
-    - We argue that the method invocation relationship is the most significant manifes-
-    tation of feature envy, which can be highly intricate within a project. To visualize
-    these relationships, we utilize Gephi1 to construct the method call graph of Realm-
-    java as an example
-    
-- proposed solution:
+- Limitations, 
+    - Method invocation relationship is not given much significance in detecting feature envy,
+    which can be very important for a project.  
+
+- Problem statement & the Proposed solution:
+    Problem Statement: How to detect and refactor Feature Envy by improving upon existing methods?
+    Focuses on method-class relationships.
+    - The current solution introduces a new approach named SFFL that is based on the 
+    reconstruction of method-class ownership heterogeneous graph.  
+    They introduce 2 processes:
+    - SMOTE Call Graph (SCG): It is a GNN based approach to address the problems of detecting and 
+    refactoring feature envy.
+        - SCG formulates the detection task as a node binary classification problem on the method call graph:
+            - Calling Strength as a concept is introduced to quantify the strength of method invocations in 
+            call graph.
+            - It builds upon the existing studiesby converting the method call graph to a method-class call graph 
+            representation.  
+            - Recommends moving the smelly method (feature envy method) to the external class 
+            with the highest calling strength.
+    - Symmetric Feature Fusion Learning (SFFL): addresses the feature envy refactoring problem.
+        - Collects the follwoing details from a project:
+            - Invocation: indicates which method calls which one
+            - Ownership: indicates which method belongs to which class
+            - Position: where the methods is located in the code
+            - Semantic information
+        - Encodes them into four directed heterogeneous graphs, where the:
+            - Nodes are methods and classes
+            - Edges are invocation or ownership relationship between them.
+        - Hence, SFFL introduces a link prediction to generate adjacency matrix representing 
+        ownership relationships between methods and classes.
+    Why are two methods used?:
+        - both the methods complement each other.
+        - SFFL exhibits better detection and refactoring performance than SCG.
+        - The detection performance of SCG is superior to SFFL when the training samples
+        are extremely imbalanced.
+  
+
+
+- What we aim to accomplish?
+    We aim to duplicate the paper's results by the end of this project.
 
     
