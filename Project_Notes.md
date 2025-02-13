@@ -23,7 +23,7 @@ The amount of slides, probably 5. Titles are to be the questions below.
 
 ### Introduction:
 - Technical concepts & keywords for the current topic  
-- What do we investigate? What questions do we need to answer?  
+### What do we investigate? What questions do we need to answer?  
 - What is the problem statement? Let’s define it ourselves.  
 - Give details about the problem presented.  
 - Talk about what makes it challenging.  
