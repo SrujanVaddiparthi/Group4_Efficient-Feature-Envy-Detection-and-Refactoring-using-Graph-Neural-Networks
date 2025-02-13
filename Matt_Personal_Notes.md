@@ -1,46 +1,45 @@
-### Open Investigation
+### Open Investigation  
 
 #### Understanding Feature Envy and Its Challenges  
-Feature Envy happens when a method depends too much on another class instead of its own. This creates problems because it makes code harder to manage and modify. A method should ideally work within its own class, but when it relies on another class for most of its work, it increases complexity.  
+- Feature Envy is when a method depends more on another class than its own.  
+- This makes code harder to maintain because it increases dependencies.  
+- Ideally, a method should belong to the class it interacts with the most.  
+- But sometimes, due to poor design or project constraints, methods end up in the wrong place.  
 
-This issue leads to three main problems:  
-
-- Low cohesion – The method doesn’t belong in its current class, making the class less organized.  
-- High coupling – The method is too connected to another class, making changes more difficult.  
-- Technical debt – As these issues build up, maintaining and improving the code becomes more challenging.  
-
-Developers try to write efficient, readable, and maintainable code, but real-world factors like tight deadlines and limited budgets often force them to take shortcuts. These shortcuts can lead to code that works in the short term but becomes harder to improve over time. Feature Envy is one of the common side effects of these decisions.  
+#### Why is this a problem?  
+- **Low cohesion** – The method doesn’t fit well in its current class.  
+- **High coupling** – It creates unnecessary dependencies between classes.  
+- **Technical debt** – Over time, this makes refactoring harder and slows down development.  
 
 #### What Have Previous Studies Done?  
-To detect Feature Envy, many tools like SonarQube, PMD, and FindBugs use static analysis. They look at:  
+- Static analysis tools like **SonarQube, PMD, and FindBugs** try to detect Feature Envy.  
+- They look at **how often a method calls another class vs. its own** and **attribute access patterns**.  
+- These methods work to some extent but have major limitations:  
+  - **Hardcoded rules** that don’t generalize well.  
+  - **False positives**, flagging methods that are actually fine.  
+  - **No refactoring suggestions**, just detection.  
 
-- How often a method calls another class compared to its own.  
-- How often a method accesses attributes from another class.  
-
-While these methods can catch some cases, they have several problems:  
-
-- They follow strict rules that don’t always apply to different codebases.  
-- They often produce false positives, flagging methods that aren’t actually misplaced.  
-- They don’t analyze the actual purpose of a method, only its structure.  
-- They only detect Feature Envy but don’t provide suggestions on how to fix it.  
-
-Newer research has explored the use of Graph Neural Networks (GNNs) to improve Feature Envy detection. GNNs analyze method relationships dynamically instead of relying on fixed rules. This makes them more flexible, but most studies using GNNs still only focus on finding Feature Envy, not solving it.  
+- Some newer studies use **Graph Neural Networks (GNNs)** to analyze method relationships dynamically.  
+- GNNs work better than static tools, but they mostly **detect** Feature Envy and don’t help with refactoring.  
 
 #### Limitations of Existing Approaches  
-Even with improved techniques, Feature Envy detection still has some major issues:  
-
-1. Static analysis methods often fail to consider deeper relationships between methods and classes.  
-2. Many tools don’t actually understand what a method does, only how it interacts with other parts of the code.  
-3. If a tool detects Feature Envy, it still requires a developer to manually decide where to move the method.  
-4. Most detection models struggle when applied to a new project with a different code structure.  
+1. **Static analysis is too rigid** – It flags issues based on surface-level patterns.  
+2. **No real understanding of method behavior** – Just counting method calls isn’t enough.  
+3. **No automated fix** – Tools tell you there’s an issue but don’t move the method for you.  
+4. **Poor generalization** – A model trained on one codebase doesn’t always work well on another.  
 
 #### Why Do We Need a Better Approach?  
-Simply detecting Feature Envy is not enough. We need a system that can:  
+- Just detecting Feature Envy isn’t enough. We need a solution that:  
+  - **Finds Feature Envy more accurately** using relationship-based analysis.  
+  - **Suggests where to move the method**, not just flagging an issue.  
+  - **Works across different types of projects** without heavy tweaking.  
 
-- Find Feature Envy more accurately by analyzing method relationships.  
-- Suggest the best class to move the method to, instead of just flagging an issue.  
-- Work well across different projects without requiring major adjustments.  
+- **Graph Neural Networks (GNNs) might be the answer.**  
+- Instead of just scanning code for predefined rules, they **learn from real projects** and detect patterns in method interactions.  
+- A good GNN-based solution could **both detect and recommend fixes**, making refactoring easier.  
 
-Graph Neural Networks (GNNs) offer a way to solve this problem. Instead of just counting method calls, they can learn patterns from actual projects and make smarter decisions about where methods should go. This could make Feature Envy detection more reliable and help automate the refactoring process.  
-
-By improving detection and automating refactoring, we can reduce the time developers spend fixing misplaced methods and make code easier to maintain in the long run.  
+#### Summary  
+- Feature Envy makes code harder to maintain.  
+- Traditional tools detect it but don’t provide refactoring help.  
+- GNN-based approaches could improve detection and **automate refactoring**.  
+- The goal is to build a system that **finds misplaced methods and suggests where to move them**.  
