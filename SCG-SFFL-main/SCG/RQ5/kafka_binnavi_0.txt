@@ -1,0 +1,29 @@
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 0
+Train set - negative samples: 0
+[]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 996
+Test set - neg samples: 9856
+[6807 1170 6133 ... 2776 5105 4300]
+
+successfully loaded: pretrained_models/kafka.pth
+Accuracy1: 97.15%
+Precision1: 81.95%
+Recall1: 88.45%
+F1-Score1: 85.08%
+
+Accuracy1: 97.15%
+Precision1: 81.95%
+Recall1: 88.45%
+F1-Score1: 85.08%
+Accuracy2: 96.89%
+Precision2: 79.35%
+Recall2: 85.64%
+F1-Score2: 82.38%
+
+Total time elapsed: 3.5499s

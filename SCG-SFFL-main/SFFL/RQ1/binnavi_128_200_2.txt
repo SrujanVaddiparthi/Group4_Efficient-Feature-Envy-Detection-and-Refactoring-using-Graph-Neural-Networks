@@ -1,0 +1,67 @@
+=== Tunable Parameters ===
+project : binnavi
+word_embedding_epochs : 200
+conv : GAT
+head_num : 8
+aggr : mean
+repeat_time : 5
+encoding : 1
+epochs : 2000
+random_seed : 2
+hidden_dim : 128
+lr : 0.001
+weight_decay : 0.0005
+dropout : 0.1
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 597
+Train set - negative samples: 5913
+
+Validation set - positive samples: 199
+Validation set - negative samples: 1971
+
+Test set - pos samples: 200
+Test set - neg samples: 1972
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 2.10 seconds.
+Semantic encoding is completed, taking 12.93 seconds.
+
+Start training...
+
+Training finished.
+Best f1: 96.39%
+Train time: 249.94
+Total time: 265.38
+
+Train set
+Accuracy1: 99.34%
+Precision1: 98.94%
+Recall1: 93.80%
+F1-Score1: 96.30%
+Accuracy2: 99.08%
+Precision2: 95.94%
+Recall2: 90.95%
+F1-Score2: 93.38%
+
+Validation set
+Accuracy1: 99.17%
+Precision1: 96.89%
+Recall1: 93.97%
+F1-Score1: 95.41%
+Accuracy2: 98.85%
+Precision2: 93.26%
+Recall2: 90.45%
+F1-Score2: 91.84%
+
+Test set
+Accuracy1: 99.13%
+Precision1: 96.89%
+Recall1: 93.50%
+F1-Score1: 95.17%
+Accuracy2: 98.90%
+Precision2: 94.30%
+Recall2: 91.00%
+F1-Score2: 92.62%
+

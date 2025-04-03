@@ -1,0 +1,29 @@
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 0
+Train set - negative samples: 0
+[]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 367
+Test set - neg samples: 6652
+[ 540 4661 2596 ... 3920 5724 5063]
+
+successfully loaded: pretrained_models/activemq.pth
+Accuracy1: 96.12%
+Precision1: 95.24%
+Recall1: 27.25%
+F1-Score1: 42.37%
+
+Accuracy1: 96.12%
+Precision1: 95.24%
+Recall1: 27.25%
+F1-Score1: 42.37%
+Accuracy2: 95.98%
+Precision2: 85.71%
+Recall2: 24.52%
+F1-Score2: 38.14%
+
+Total time elapsed: 2.6572s

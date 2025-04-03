@@ -1,0 +1,29 @@
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 0
+Train set - negative samples: 0
+[]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 996
+Test set - neg samples: 9856
+[6807 1170 6133 ... 2776 5105 4300]
+
+successfully loaded: pretrained_models/alluxio.pth
+Accuracy1: 96.31%
+Precision1: 74.96%
+Recall1: 89.86%
+F1-Score1: 81.74%
+
+Accuracy1: 96.31%
+Precision1: 74.96%
+Recall1: 89.86%
+F1-Score1: 81.74%
+Accuracy2: 95.98%
+Precision2: 71.94%
+Recall2: 86.24%
+F1-Score2: 78.45%
+
+Total time elapsed: 3.5456s

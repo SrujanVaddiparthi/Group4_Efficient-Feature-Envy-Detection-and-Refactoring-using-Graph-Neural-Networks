@@ -1,0 +1,35 @@
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 4
+Train set - negative samples: 93
+[7357 9747 9336 4190 5146 5367 7858 4405 6747 9794 2577 4867 7058 1250
+ 4375 4132 1481 1690 4137 7240 2833 5511 7982 8745 4151 9080 2942 6605
+ 7632 5425 3562 2184 4812 8128 9504 8464 8979 7421 7544 1683 3835 5578
+ 2920 2422 7831 1651 7061  543 4653 7815 9368  252 5698  369 3840 5346
+  602 8245 1132  353 7286  267 3132 3998 9205 8537   39 6263 5615 4893
+ 4308 3921 5601 1346 4543 8043 8379 9373 1772 4274 3736 3496 4212 6834
+ 1123 7657 4092 8239   97 3188 2003 5020 5539 2836 2513 6395 1854]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 442
+Test set - neg samples: 9279
+[9429  839 3066 ... 3584 7204   64]
+
+successfully loaded: pretrained_models/binnavi.pth
+Accuracy1: 96.62%
+Precision1: 68.40%
+Recall1: 47.51%
+F1-Score1: 56.07%
+
+Accuracy1: 96.62%
+Precision1: 68.40%
+Recall1: 47.51%
+F1-Score1: 56.07%
+Accuracy2: 96.08%
+Precision2: 51.47%
+Recall2: 35.75%
+F1-Score2: 42.19%
+
+Total time elapsed: 42.9209s

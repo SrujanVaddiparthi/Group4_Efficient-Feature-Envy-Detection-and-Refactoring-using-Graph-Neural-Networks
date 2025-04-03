@@ -1,0 +1,67 @@
+=== Tunable Parameters ===
+project : realm-java
+word_embedding_epochs : 400
+conv : GAT
+head_num : 8
+aggr : mean
+repeat_time : 5
+encoding : 1
+epochs : 2000
+random_seed : 3
+hidden_dim : 256
+lr : 0.001
+weight_decay : 0.0005
+dropout : 0.1
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 165
+Train set - negative samples: 1314
+
+Validation set - positive samples: 55
+Validation set - negative samples: 438
+
+Test set - pos samples: 56
+Test set - neg samples: 438
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 2.05 seconds.
+Semantic encoding is completed, taking 6.39 seconds.
+
+Start training...
+
+Training finished.
+Best f1: 84.00%
+Train time: 74.32
+Total time: 82.88
+
+Train set
+Accuracy1: 98.11%
+Precision1: 98.45%
+Recall1: 83.01%
+F1-Score1: 90.07%
+Accuracy2: 98.11%
+Precision2: 98.45%
+Recall2: 83.01%
+F1-Score2: 90.07%
+
+Validation set
+Accuracy1: 96.75%
+Precision1: 89.36%
+Recall1: 79.25%
+F1-Score1: 84.00%
+Accuracy2: 96.35%
+Precision2: 85.11%
+Recall2: 75.47%
+F1-Score2: 80.00%
+
+Test set
+Accuracy1: 96.56%
+Precision1: 95.12%
+Recall1: 72.22%
+F1-Score1: 82.11%
+Accuracy2: 95.75%
+Precision2: 85.37%
+Recall2: 64.81%
+F1-Score2: 73.68%
+

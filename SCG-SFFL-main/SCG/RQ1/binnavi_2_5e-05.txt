@@ -1,0 +1,29 @@
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 597
+Train set - negative samples: 5913
+[ 8592  8775  5532 ...  1319 10535  6745]
+
+Validation set - positive samples: 199
+Validation set - negative samples: 1971
+[10155  5178  1865 ...  1908  1670  8793]
+
+Test set - pos samples: 200
+Test set - neg samples: 1972
+[ 6495  1910  3444 ...  3328  5898 10569]
+
+Optimization Finished!
+Total time elapsed: 124.9931s
+Accuracy1: 98.53%
+Precision1: 91.18%
+Recall1: 93.00%
+F1-Score1: 92.08%
+
+Accuracy1: 98.53%
+Precision1: 91.18%
+Recall1: 93.00%
+F1-Score1: 92.08%
+Accuracy2: 97.97%
+Precision2: 85.29%
+Recall2: 87.00%
+F1-Score2: 86.14%
+

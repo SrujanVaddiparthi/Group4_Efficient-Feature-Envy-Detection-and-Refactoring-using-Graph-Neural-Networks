@@ -1,0 +1,29 @@
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 0
+Train set - negative samples: 0
+[]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 446
+Test set - neg samples: 9372
+[ 189 7322 1505 ... 4081 2389 3935]
+
+successfully loaded: pretrained_models/binnavi.pth
+Accuracy1: 97.02%
+Precision1: 68.09%
+Recall1: 64.57%
+F1-Score1: 66.28%
+
+Accuracy1: 97.02%
+Precision1: 68.09%
+Recall1: 64.57%
+F1-Score1: 66.28%
+Accuracy2: 96.46%
+Precision2: 55.08%
+Recall2: 52.24%
+F1-Score2: 53.62%
+
+Total time elapsed: 3.1750s

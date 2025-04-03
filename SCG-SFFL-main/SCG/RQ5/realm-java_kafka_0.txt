@@ -1,0 +1,29 @@
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 0
+Train set - negative samples: 0
+[]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 446
+Test set - neg samples: 9372
+[ 189 7322 1505 ... 4081 2389 3935]
+
+successfully loaded: pretrained_models/realm-java.pth
+Accuracy1: 95.47%
+Precision1: 50.12%
+Recall1: 47.98%
+F1-Score1: 49.03%
+
+Accuracy1: 95.47%
+Precision1: 50.12%
+Recall1: 47.98%
+F1-Score1: 49.03%
+Accuracy2: 95.14%
+Precision2: 42.62%
+Recall2: 40.81%
+F1-Score2: 41.70%
+
+Total time elapsed: 3.1493s

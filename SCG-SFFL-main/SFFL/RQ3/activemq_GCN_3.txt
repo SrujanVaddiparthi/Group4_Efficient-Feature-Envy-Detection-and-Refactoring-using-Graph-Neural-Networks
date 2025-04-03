@@ -1,0 +1,68 @@
+=== Tunable Parameters ===
+project : activemq
+word_embedding_epochs : 300
+conv : GCN
+head_num : 8
+aggr : mean
+repeat_time : 5
+encoding : 1
+epochs : 2000
+random_seed : 3
+hidden_dim : 256
+lr : 0.001
+weight_decay : 0.0005
+dropout : 0.1
+device : cuda:2
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 353
+Train set - negative samples: 8935
+
+Validation set - positive samples: 117
+Validation set - negative samples: 2978
+
+Test set - pos samples: 119
+Test set - neg samples: 2980
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 4.36 seconds.
+Semantic encoding is completed, taking 112.72 seconds.
+
+Start training...
+
+Training finished.
+Best f1: 58.95%
+Train time: 356.73
+Total time: 477.06
+
+Train set
+Accuracy1: 98.26%
+Precision1: 89.92%
+Recall1: 60.80%
+F1-Score1: 72.54%
+Accuracy2: 98.20%
+Precision2: 87.82%
+Recall2: 59.38%
+F1-Score2: 70.85%
+
+Validation set
+Accuracy1: 97.29%
+Precision1: 75.81%
+Recall1: 40.52%
+F1-Score1: 52.81%
+Accuracy2: 97.22%
+Precision2: 72.58%
+Recall2: 38.79%
+F1-Score2: 50.56%
+
+Test set
+Accuracy1: 97.55%
+Precision1: 80.60%
+Recall1: 46.15%
+F1-Score1: 58.70%
+Accuracy2: 97.48%
+Precision2: 77.61%
+Recall2: 44.44%
+F1-Score2: 56.52%
+

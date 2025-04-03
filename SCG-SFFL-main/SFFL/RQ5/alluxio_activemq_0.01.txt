@@ -1,0 +1,71 @@
+=== Tunable Parameters ===
+project : activemq
+word_embedding_epochs : 300
+conv : GAT
+head_num : 8
+aggr : mean
+repeat_time : 1
+encoding : 1
+epochs : 2400
+random_seed : 0
+hidden_dim : 256
+lr : 0.001
+weight_decay : 0.0005
+dropout : 0.1
+device : cuda
+pretrained_project : alluxio
+fine_tuned_project : activemq
+fine_tune_epochs : 400
+fine_tune_data : 0.01
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 5
+Train set - negative samples: 148
+[ 4345   128   933 14827  9117 14928  1121  1729 13711  6303  1244 14319
+ 10787  8039 13523 13138 14665 10145  7814  4741 11091  7525  9798  3574
+  6374 11242  3885  3715 10570  2844  4979 14501  9469  9743  3596   733
+  2083  3476 14867  6638 13010  7772 14151  3073  9128  2488  2529  4102
+   534 10860 14245  3127   100  6442 13887  7923 10376 11825  4022  3804
+  3942  7732  3350 11926  4913 15439  2189  2868 14507  9658  6043  4214
+ 13963 10075 12620 11180 10537  3752  9608    89  4461  5760  4966 11944
+ 12202 10425 11372 10015  4361 11132 12298  4123   858  7387 14915  4188
+  7299  4100  7391  2499 10613 11959 14981  5556  7073  2732  9927  4362
+  1042  2500 14048  4528 11939 12614  3563 13004 12980  5165 15284 12290
+ 10233  7257  6188  1518  6360 11149  9904  3330  3134   304  9268 10873
+ 13649 13699   151 13662  9243  9426   366  1138   353  9667 12644  8142
+ 12898  5013  3352  8325  7441 10673  5429  2265  6799]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 580
+Test set - neg samples: 14749
+[ 3682   280  1373 ...   285 14260 10171]
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 2.28 seconds.
+Semantic encoding is completed, taking 24.41 seconds.
+
+Train set
+Accuracy1: 98.69%
+Precision1: 100.00%
+Recall1: 60.00%
+F1-Score1: 75.00%
+Accuracy2: 98.04%
+Precision2: 66.67%
+Recall2: 40.00%
+F1-Score2: 50.00%
+
+Test set
+Accuracy1: 92.68%
+Precision1: 15.43%
+Recall1: 20.86%
+F1-Score1: 17.74%
+Accuracy2: 92.07%
+Precision2: 3.44%
+Recall2: 4.66%
+F1-Score2: 3.96%
+
+Total time elapsed: 43.0887s

@@ -1,0 +1,37 @@
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 13
+Train set - negative samples: 110
+[ 257 1156 2006 1234 1331  458 1245 2194  651  474 2202   57  183 2163
+ 2421  835 1986  537 2251 2002  115  549  198 2438 1988  910 2404  813
+ 2451  704  367 1625  709 1352 1788 2242 1847 2465 1182 1900 1167 1443
+ 1124 1434  375  143 1305  568 1133  690 2053  853 1632  875 1486 1968
+ 2363  786 1755  691 1126  945 2187  684  839 2246 1725 1344 1551 1526
+ 1901  250  422 1448  873 2060  860  416 2457 1971  484 1899  157 2023
+ 1220  461 1442 1923 1744 1995 1914 2287  849 1030  726 1982  548 1852
+ 1979 1960 2269  476 1917 1951  503 2076 2201 1410  946 2285 2343 1386
+  584  262 1890  890 1685 2197 1645 1933  798 1916 1698]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 247
+Test set - neg samples: 2096
+[ 525 1029 1941 ... 1702 1704  825]
+
+successfully loaded: pretrained_models/alluxio.pth
+Accuracy1: 94.20%
+Precision1: 75.11%
+Recall1: 67.21%
+F1-Score1: 70.94%
+
+Accuracy1: 94.20%
+Precision1: 75.11%
+Recall1: 67.21%
+F1-Score1: 70.94%
+Accuracy2: 91.08%
+Precision2: 42.08%
+Recall2: 37.65%
+F1-Score2: 39.74%
+
+Total time elapsed: 6.4136s

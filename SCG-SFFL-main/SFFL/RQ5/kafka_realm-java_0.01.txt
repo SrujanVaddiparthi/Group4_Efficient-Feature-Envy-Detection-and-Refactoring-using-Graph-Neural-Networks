@@ -1,0 +1,60 @@
+=== Tunable Parameters ===
+project : activemq
+word_embedding_epochs : 300
+conv : GAT
+head_num : 8
+aggr : mean
+repeat_time : 1
+encoding : 1
+epochs : 2400
+random_seed : 0
+hidden_dim : 256
+lr : 0.001
+weight_decay : 0.0005
+dropout : 0.1
+device : cuda
+pretrained_project : kafka
+fine_tuned_project : realm-java
+fine_tune_epochs : 400
+fine_tune_data : 0.01
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 2
+Train set - negative samples: 22
+[2438  375  474 2023  684  250  726 1755 1625  835 1443 1182  548 1971
+ 2163 1133  709 1914  690  484 2404 2002 1698 2201]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 258
+Test set - neg samples: 2184
+[2342 1035 1275 ...  593  673  888]
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 2.02 seconds.
+Semantic encoding is completed, taking 4.89 seconds.
+
+Train set
+Accuracy1: 100.00%
+Precision1: 100.00%
+Recall1: 100.00%
+F1-Score1: 100.00%
+Accuracy2: 100.00%
+Precision2: 100.00%
+Recall2: 100.00%
+F1-Score2: 100.00%
+
+Test set
+Accuracy1: 75.96%
+Precision1: 25.26%
+Recall1: 65.12%
+F1-Score1: 36.40%
+Accuracy2: 73.96%
+Precision2: 17.89%
+Recall2: 46.12%
+F1-Score2: 25.79%
+
+Total time elapsed: 10.9778s

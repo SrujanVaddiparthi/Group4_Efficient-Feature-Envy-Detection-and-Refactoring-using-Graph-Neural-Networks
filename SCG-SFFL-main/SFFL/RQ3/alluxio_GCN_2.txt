@@ -1,0 +1,68 @@
+=== Tunable Parameters ===
+project : alluxio
+word_embedding_epochs : 300
+conv : GCN
+head_num : 8
+aggr : mean
+repeat_time : 5
+encoding : 1
+epochs : 2000
+random_seed : 2
+hidden_dim : 256
+lr : 0.001
+weight_decay : 0.0005
+dropout : 0.1
+device : cuda:2
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 225
+Train set - negative samples: 3985
+
+Validation set - positive samples: 75
+Validation set - negative samples: 1328
+
+Test set - pos samples: 76
+Test set - neg samples: 1330
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 3.01 seconds.
+Semantic encoding is completed, taking 54.80 seconds.
+
+Start training...
+
+Training finished.
+Best f1: 70.59%
+Train time: 234.52
+Total time: 293.49
+
+Train set
+Accuracy1: 98.17%
+Precision1: 97.97%
+Recall1: 66.21%
+F1-Score1: 79.02%
+Accuracy2: 98.12%
+Precision2: 96.62%
+Recall2: 65.30%
+F1-Score2: 77.93%
+
+Validation set
+Accuracy1: 97.51%
+Precision1: 93.18%
+Recall1: 56.16%
+F1-Score1: 70.09%
+Accuracy2: 97.36%
+Precision2: 88.64%
+Recall2: 53.42%
+F1-Score2: 66.67%
+
+Test set
+Accuracy1: 97.08%
+Precision1: 85.42%
+Recall1: 54.67%
+F1-Score1: 66.67%
+Accuracy2: 97.08%
+Precision2: 85.42%
+Recall2: 54.67%
+F1-Score2: 66.67%
+

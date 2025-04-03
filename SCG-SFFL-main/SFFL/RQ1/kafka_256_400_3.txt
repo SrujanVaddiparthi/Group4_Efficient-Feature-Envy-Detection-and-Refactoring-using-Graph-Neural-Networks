@@ -1,0 +1,67 @@
+=== Tunable Parameters ===
+project : kafka
+word_embedding_epochs : 400
+conv : GAT
+head_num : 8
+aggr : mean
+repeat_time : 5
+encoding : 1
+epochs : 2000
+random_seed : 3
+hidden_dim : 256
+lr : 0.001
+weight_decay : 0.0005
+dropout : 0.1
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 268
+Train set - negative samples: 5622
+
+Validation set - positive samples: 89
+Validation set - negative samples: 1874
+
+Test set - pos samples: 91
+Test set - neg samples: 1874
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 2.14 seconds.
+Semantic encoding is completed, taking 21.86 seconds.
+
+Start training...
+
+Training finished.
+Best f1: 79.47%
+Train time: 230.06
+Total time: 254.44
+
+Train set
+Accuracy1: 98.57%
+Precision1: 97.92%
+Recall1: 70.15%
+F1-Score1: 81.74%
+Accuracy2: 98.56%
+Precision2: 97.40%
+Recall2: 69.78%
+F1-Score2: 81.30%
+
+Validation set
+Accuracy1: 98.22%
+Precision1: 91.94%
+Recall1: 65.52%
+F1-Score1: 76.51%
+Accuracy2: 98.12%
+Precision2: 88.71%
+Recall2: 63.22%
+F1-Score2: 73.83%
+
+Test set
+Accuracy1: 97.61%
+Precision1: 85.48%
+Recall1: 58.24%
+F1-Score1: 69.28%
+Accuracy2: 97.61%
+Precision2: 85.48%
+Recall2: 58.24%
+F1-Score2: 69.28%
+

@@ -1,0 +1,67 @@
+=== Tunable Parameters ===
+project : activemq
+word_embedding_epochs : 300
+conv : GAT
+head_num : 8
+aggr : mean
+repeat_time : 1
+encoding : 1
+epochs : 2400
+random_seed : 0
+hidden_dim : 256
+lr : 0.001
+weight_decay : 0.0005
+dropout : 0.1
+device : cuda
+pretrained_project : alluxio
+fine_tuned_project : binnavi
+fine_tune_epochs : 400
+fine_tune_data : 0.01
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 9
+Train set - negative samples: 98
+[ 5328  9410   500  7033  2040  3209  7472  3421  3663  1971  7275  5934
+  6148  1881  2600  8328    36  4412  4179  8564  5707  3493  9491  5525
+  8882  7864  2470  4274  6029  3146  4251   978   109    34 10720  6201
+  6109  1340  5491  4427  7936  1253  7100  5492  7067  4208  7218  9219
+  7950  3658  4387   373  6178 10467  7141  7061 10294  1585   947  2952
+  5970   558  7421  9595  7238  6377  3465  1090  9792  8700  4004  6312
+  8470  1759  5403  6747  4747 10350  9561  1177  8743  6890  2487  6356
+  8149  3590  2491 10682  5214  5448   496 10519  8597  6064  4252  5339
+  5656  2170  8739  9440  5232  3469  8449  8746  1683  3827  4848]
+
+Validation set - positive samples: 0
+Validation set - negative samples: 0
+[]
+
+Test set - pos samples: 987
+Test set - neg samples: 9758
+[5048 2131 6662 ... 8115 7481 1182]
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 2.16 seconds.
+Semantic encoding is completed, taking 22.16 seconds.
+
+Train set
+Accuracy1: 98.13%
+Precision1: 88.89%
+Recall1: 88.89%
+F1-Score1: 88.89%
+Accuracy2: 98.13%
+Precision2: 88.89%
+Recall2: 88.89%
+F1-Score2: 88.89%
+
+Test set
+Accuracy1: 83.22%
+Precision1: 34.06%
+Recall1: 88.35%
+F1-Score1: 49.17%
+Accuracy2: 82.27%
+Precision2: 30.08%
+Recall2: 78.01%
+F1-Score2: 43.42%
+
+Total time elapsed: 37.9318s
