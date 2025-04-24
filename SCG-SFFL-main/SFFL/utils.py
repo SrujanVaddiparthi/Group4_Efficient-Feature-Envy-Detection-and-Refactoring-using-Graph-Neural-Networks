@@ -139,7 +139,15 @@ def print_metrics(class_pred, class_true, class_real, print_flag=False):
     return acc_2, precision_2, recall_2, f1_2
     
 def load_data(project):
-    df1 = pd.read_csv(f'data/{project}/ground_truth.csv')
+    balanced_path = f'data/{project}/ground_truth_balanced.csv' #this is where I changed it to train the SFFL over balanced csv
+    original_path = f'data/{project}/ground_truth.csv'
+    if os.path.exists(balanced_path):
+        print(f"using balanced dataset: {balanced_path}")
+        df1 = pd.read_csv(balanced_path)
+    if os.path.exists(original_path):
+        print(f"using original dataset: {original_path}")
+        df1 = pd.read_csv(original_path)
+    # df1 = pd.read_csv(f'data/{project}/ground_truth.csv')
     df2 = pd.read_csv(f'data/{project}/method-invocate-method.csv')
 
     # egdes between methods and classes, representing ownership of method
