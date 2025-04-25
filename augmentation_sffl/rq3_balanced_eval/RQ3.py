@@ -3,16 +3,25 @@ import time
 import subprocess
 import re
 import statistics
+import torch
 
 # creating RQ3 output directory
 os.makedirs("RQ3", exist_ok=True)
 
 project_list = ['activemq'] #, 'alluxio', 'binnavi', 'kafka', 'realm-java']
-conv_list = ['GAT', 'GCN', 'Sage']
-random_seed_list =list(range(5))
+conv_list = ['GAT']#, 'GCN', 'Sage']
+# random_seed_list =list(range(5))
+random_seed_list = [0]  # Only run once
+
 repeat_time = 5
 t_start = time.time()
-device = 'cuda'
+"""since using macbook M1 pro, had to change the device name to cpu instead of leaving it as cuda"""
+# device = 'cuda'
+device = 'cpu'
+# device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+# device = "mps" if torch.backends.mps.is_available() else "cpu"
+
+
 for project in project_list:
     for conv in conv_list:
         for random_seed in random_seed_list:
@@ -24,12 +33,19 @@ for project in project_list:
 
             t_round = time.time()
             command = f"python train.py --project {project} --conv {conv} --random_seed {random_seed} --repeat_time {repeat_time} --device {device}"
-            process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            process = subprocess.Popen(
+                command,
+                shell=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,  # combine stdout + stderr
+                universal_newlines=True    # decode to string line-by-line
+            )
+            stdout, _ = process.communicate()
 
-            stdout, stderr = process.communicate()
 
             with open(filename, "w") as file:
-                file.write(stdout.decode())
+                # file.write(stdout.decode())
+                file.write(stdout)
                 print(f'Results have been saved to {filename}')
             print('This round time:', time.time() - t_round)
 
@@ -54,7 +70,7 @@ def process_file(filename):
     print(content)  # Print everything once to see structure (can comment later)
 
     # If you see "Test set" followed by metrics, keep this
-    start_index = content.find("Test set\n")
+    start_index = content.find("Test set")
     if start_index == -1:
         print(f"[!] 'Test set' block not found in: {filename}")
         return None, None, None

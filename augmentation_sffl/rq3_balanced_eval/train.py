@@ -54,8 +54,12 @@ t_start = time.time()
 
 parser = utils.get_parser()
 args = parser.parse_args()
+print(f"[train.py] Started training with args: {args}", flush=True)
+
 if args.project == "activemq":
     args.weight_decay = 8e-5
+args.epochs = 1000  # TEMP: reduce training time while debugging
+
 print("=== Tunable Parameters ===")
 for arg in vars(args):
     print(arg, ":", getattr(args, arg))
@@ -70,6 +74,15 @@ class_num, method_num = len(class_tokens), len(method_tokens)
 
 # get train, validation, test data split
 train_idx, val_idx, test_idx = utils.split_dataset(labels, 0.6, 0.2, 0.2, args.random_seed)
+# ensure train/val/test indices match the shape of output tensor
+# build mapping from method_id to 0-based index
+method_ids = mc_own_adj.indices()[0].unique(sorted=True)
+method_id_to_idx = {int(mid): i for i, mid in enumerate(method_ids)}
+
+# remap indices using the above mapping
+train_idx = torch.tensor([method_id_to_idx[int(i)] for i in train_idx if int(i) in method_id_to_idx])
+val_idx = torch.tensor([method_id_to_idx[int(i)] for i in val_idx if int(i) in method_id_to_idx])
+test_idx = torch.tensor([method_id_to_idx[int(i)] for i in test_idx if int(i) in method_id_to_idx])
 
 # encoding 
 if args.encoding == 1:
@@ -106,13 +119,21 @@ else:
     print('Semantic encoding is completed, taking {:.2f} seconds.\n'.format(time.time() - t))
 
 
-mc_own_adj, mc_call_adj, fmc_own_adj = mc_own_adj.to(device), mc_call_adj.to(device), fmc_own_adj.to(device)
+# mc_own_adj, mc_call_adj, fmc_own_adj = mc_own_adj.to(device), mc_call_adj.to(device), fmc_own_adj.to(device)
+# Sparse tensors don't support MPS backend
+if device != 'mps':
+    mc_own_adj = mc_own_adj.to(device)
+    mc_call_adj = mc_call_adj.to(device)
+    fmc_own_adj = fmc_own_adj.to(device)
+
 
 t_train = time.time()
 print('Start training...\n')
 best_f1, this_time_best_f1 = 0, 0
 
-for _ in range(args.repeat_time):
+# for _ in range(args.repeat_time):
+for _ in range(1):  # run the model just once
+
     # Model and optimizer
     model = GNNReconstructor(args.hidden_dim, args.conv, args.head_num, args.aggr, args.dropout)
     model = model.to(device)
@@ -135,4 +156,7 @@ print('Best f1: {:.2%}'.format(best_f1))
 print('Train time: {:.2f}'.format(time.time() - t_train))
 print('Total time: {:.2f}\n'.format(time.time() - t_start))
 model.load_state_dict(torch.load('best_model.pt'))
+print('\nNow testing best model on test set...\n')
 test()
+
+print("TRAIN.PY EXECUTION COMPLETE", flush=True)

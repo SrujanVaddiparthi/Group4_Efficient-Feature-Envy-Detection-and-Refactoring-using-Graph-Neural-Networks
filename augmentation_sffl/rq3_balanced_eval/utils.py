@@ -1,4 +1,5 @@
 # auto-switching between .csv files has been added
+import os
 
 import argparse
 import numpy as np
@@ -25,7 +26,7 @@ def get_parser():
     parser.add_argument('--lr', type=float, default=1e-3)
     parser.add_argument('--weight_decay', type=float, default=5e-4)
     parser.add_argument('--dropout', type=float, default=0.1)
-    parser.add_argument('--device', type=str, default='cuda', choices=['cpu', 'cuda', 'cuda:0', 'cuda:1', 'cuda:2', 'cuda:3'])
+    parser.add_argument('--device', type=str, default='cuda', choices=['cpu', 'cuda', 'cuda:0', 'cuda:1', 'cuda:2', 'cuda:3', 'mps'])
     
     # for pretrain and fine-tune
     parser.add_argument('--pretrained_project', type=str, default='activemq', choices=['binnavi', 'activemq', 'kafka', 'alluxio', 'realm-java'])
@@ -141,13 +142,14 @@ def print_metrics(class_pred, class_true, class_real, print_flag=False):
     return acc_2, precision_2, recall_2, f1_2
     
 def load_data(project):
-    balanced_path = f'augmentation_sffl/rq3_balanced_eval/data/{project}/ground_truth_balanced.csv' #this is where I changed it to train the SFFL over balanced csv
-    original_path = f'augmentation_sffl/rq3_balanced_eval/data/{project}/ground_truth.csv'
+    balanced_path = f'data/{project}/ground_truth_balanced.csv'#this is where I changed it to train the SFFL over balanced csv
+    original_path = f'data/{project}/ground_truth.csv'
+
     if os.path.exists(balanced_path):
-        print(f"using balanced dataset: {balanced_path}")
+        print(f"\n USING BALANCED DATASET: {balanced_path}\n")
         df1 = pd.read_csv(balanced_path)
     elif os.path.exists(original_path):
-        print(f"using original dataset: {original_path}")
+        print(f"\n USING ORIGINAL DATASET: {original_path}\n")
         df1 = pd.read_csv(original_path)
     else:
         raise FileNotFoundError("Neither balanced nor original ground_truth.csv found!")

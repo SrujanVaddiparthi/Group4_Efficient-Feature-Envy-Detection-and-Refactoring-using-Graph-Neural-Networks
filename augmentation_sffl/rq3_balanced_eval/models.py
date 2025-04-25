@@ -70,7 +70,13 @@ class GNNReconstructor(nn.Module):
         c_features = F.dropout(c_features, p=self.dropout)
 
         # let method know its class features
-        mc_own = torch.mm(mc_own_adj, c_features)                                                        
+        mc_own = torch.mm(mc_own_adj, c_features)       
+        # Ensure both tensors are on same device (SparseMPS torch.mm not supported)
+        if mc_own_adj.is_sparse and mc_own_adj.device.type == 'cpu':
+            c_features = c_features.to('cpu')
+
+        mc_own = torch.mm(mc_own_adj, c_features)
+                                                 
 
         # let method know feature of classes it calls
         mc_features = torch.cat((m_features, c_features), dim=0)

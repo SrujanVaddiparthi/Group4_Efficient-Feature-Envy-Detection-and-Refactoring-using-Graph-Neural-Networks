@@ -1,0 +1,290 @@
+[train.py] Started training with args: Namespace(project='activemq', word_embedding_epochs=300, conv='GAT', head_num=8, aggr='mean', repeat_time=5, encoding=1, epochs=2400, random_seed=0, hidden_dim=256, lr=0.001, weight_decay=0.0005, dropout=0.1, device='cpu', pretrained_project='activemq', fine_tuned_project='alluxio', fine_tune_epochs=400, fine_tune_data=0.1)
+/Users/wangtiles/Desktop/DSCI644/Group4_Efficient-Feature-Envy-Detection-and-Refactoring-using-Graph-Neural-Networks/augmentation_sffl/rq3_balanced_eval/utils.py:188: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:56.)
+  mc_call_adj = torch.sparse.mm(mm_call_adj, mc_own_adj).coalesce()
+/Users/wangtiles/Desktop/DSCI644/Group4_Efficient-Feature-Envy-Detection-and-Refactoring-using-Graph-Neural-Networks/augmentation_sffl/rq3_balanced_eval/models.py:43: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_new.cpp:248.)
+  return torch.tensor(embeddings)
+=== Tunable Parameters ===
+project : activemq
+word_embedding_epochs : 300
+conv : GAT
+head_num : 8
+aggr : mean
+repeat_time : 5
+encoding : 1
+epochs : 100
+random_seed : 0
+hidden_dim : 256
+lr : 0.001
+weight_decay : 8e-05
+dropout : 0.1
+device : cpu
+pretrained_project : activemq
+fine_tuned_project : alluxio
+fine_tune_epochs : 400
+fine_tune_data : 0.1
+
+
+ USING BALANCED DATASET: data/activemq/ground_truth_balanced.csv
+
+=== The Results of Dataset Splitting ===
+Train set - positive samples: 8938
+Train set - negative samples: 8938
+[ 5380 29064  2586 ... 11771 28180 25495]
+
+Validation set - positive samples: 2979
+Validation set - negative samples: 2979
+[ 5927 19826 24657 ...  3235  9141  9995]
+
+Test set - pos samples: 2980
+Test set - neg samples: 2980
+[ 5793  4815 16108 ... 19463 29649  5120]
+
+Both position encoding and semantic encoding are taken.
+
+Position encoding is completed, taking 0.35 seconds.
+Semantic encoding is completed, taking 18.92 seconds.
+
+Start training...
+
+
+  0%|[31m                                                                    [0m| 0/100 [00:00<?, ?epoch/s][0m
+  0%|[31m                      [0m| 0/100 [00:00<?, ?epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  1%|[31m▏             [0m| 1/100 [00:00<01:06,  1.48epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  1%|[31m▏             [0m| 1/100 [00:01<01:06,  1.48epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  2%|[31m▎             [0m| 2/100 [00:01<00:58,  1.68epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  2%|[31m▎             [0m| 2/100 [00:01<00:58,  1.68epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  3%|[31m▍             [0m| 3/100 [00:01<00:52,  1.85epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  3%|[31m▍             [0m| 3/100 [00:02<00:52,  1.85epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  4%|[31m▌             [0m| 4/100 [00:02<00:47,  2.02epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  4%|[31m▌             [0m| 4/100 [00:02<00:47,  2.02epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  5%|[31m▋             [0m| 5/100 [00:02<00:45,  2.09epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  5%|[31m▋             [0m| 5/100 [00:02<00:45,  2.09epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  6%|[31m▊             [0m| 6/100 [00:02<00:43,  2.17epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  6%|[31m▊             [0m| 6/100 [00:03<00:43,  2.17epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  7%|[31m▉             [0m| 7/100 [00:03<00:43,  2.14epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  7%|[31m▉             [0m| 7/100 [00:03<00:43,  2.14epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  8%|[31m█             [0m| 8/100 [00:03<00:42,  2.16epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  8%|[31m█             [0m| 8/100 [00:04<00:42,  2.16epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  9%|[31m█▎            [0m| 9/100 [00:04<00:41,  2.21epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+  9%|[31m█▎            [0m| 9/100 [00:04<00:41,  2.21epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 10%|[31m█▎           [0m| 10/100 [00:04<00:39,  2.29epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 10%|[31m█▎           [0m| 10/100 [00:05<00:39,  2.29epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 11%|[31m█▍           [0m| 11/100 [00:05<00:38,  2.33epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 11%|[31m█▍           [0m| 11/100 [00:05<00:38,  2.33epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 12%|[31m█▌           [0m| 12/100 [00:05<00:36,  2.39epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 12%|[31m█▌           [0m| 12/100 [00:05<00:36,  2.39epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 13%|[31m█▋           [0m| 13/100 [00:05<00:36,  2.40epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 13%|[31m█▋           [0m| 13/100 [00:06<00:36,  2.40epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 14%|[31m█▊           [0m| 14/100 [00:06<00:35,  2.44epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 14%|[31m█▊           [0m| 14/100 [00:06<00:35,  2.44epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 15%|[31m█▉           [0m| 15/100 [00:06<00:34,  2.48epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 15%|[31m█▉           [0m| 15/100 [00:07<00:34,  2.48epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 16%|[31m██           [0m| 16/100 [00:07<00:33,  2.50epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 16%|[31m██           [0m| 16/100 [00:07<00:33,  2.50epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 17%|[31m██▏          [0m| 17/100 [00:07<00:33,  2.50epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 17%|[31m██▏          [0m| 17/100 [00:07<00:33,  2.50epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 18%|[31m██▎          [0m| 18/100 [00:07<00:32,  2.51epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 18%|[31m██▎          [0m| 18/100 [00:08<00:32,  2.51epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 19%|[31m██▍          [0m| 19/100 [00:08<00:32,  2.52epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 19%|[31m██▍          [0m| 19/100 [00:08<00:32,  2.52epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 20%|[31m██▌          [0m| 20/100 [00:08<00:31,  2.53epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 20%|[31m██▌          [0m| 20/100 [00:09<00:31,  2.53epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 21%|[31m██▋          [0m| 21/100 [00:09<00:30,  2.55epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 21%|[31m██▋          [0m| 21/100 [00:09<00:30,  2.55epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 22%|[31m██▊          [0m| 22/100 [00:09<00:30,  2.55epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 22%|[31m██▊          [0m| 22/100 [00:09<00:30,  2.55epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 23%|[31m██▉          [0m| 23/100 [00:09<00:30,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 23%|[31m██▉          [0m| 23/100 [00:10<00:30,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 24%|[31m███          [0m| 24/100 [00:10<00:29,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 24%|[31m███          [0m| 24/100 [00:10<00:29,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 25%|[31m███▎         [0m| 25/100 [00:10<00:29,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 25%|[31m███▎         [0m| 25/100 [00:11<00:29,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 26%|[31m███▍         [0m| 26/100 [00:11<00:28,  2.57epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 26%|[31m███▍         [0m| 26/100 [00:11<00:28,  2.57epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 27%|[31m███▌         [0m| 27/100 [00:11<00:28,  2.57epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 27%|[31m███▌         [0m| 27/100 [00:11<00:28,  2.57epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 28%|[31m███▋         [0m| 28/100 [00:11<00:28,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 28%|[31m███▋         [0m| 28/100 [00:12<00:28,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 29%|[31m███▊         [0m| 29/100 [00:12<00:27,  2.57epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 29%|[31m███▊         [0m| 29/100 [00:12<00:27,  2.57epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 30%|[31m███▉         [0m| 30/100 [00:12<00:27,  2.56epoch/s, best f1 in val this time=0, best f1 in val=0][0m
+ 30%|[31m▎[0m| 30/100 [00:13<00:27,  2.56epoch/s, best f1 in val this time=0.00334, best f1 in val=0.00334][0m
+ 31%|[31m▎[0m| 31/100 [00:13<00:26,  2.56epoch/s, best f1 in val this time=0.00334, best f1 in val=0.00334][0m
+ 31%|[31m▎[0m| 31/100 [00:13<00:26,  2.56epoch/s, best f1 in val this time=0.00334, best f1 in val=0.00334][0m
+ 32%|[31m▎[0m| 32/100 [00:13<00:26,  2.56epoch/s, best f1 in val this time=0.00334, best f1 in val=0.00334][0m
+ 32%|[31m▎[0m| 32/100 [00:13<00:26,  2.56epoch/s, best f1 in val this time=0.00334, best f1 in val=0.00334][0m
+ 33%|[31m▎[0m| 33/100 [00:13<00:26,  2.57epoch/s, best f1 in val this time=0.00334, best f1 in val=0.00334][0m
+ 33%|[31m▎[0m| 33/100 [00:14<00:26,  2.57epoch/s, best f1 in val this time=0.00334, best f1 in val=0.00334][0m
+ 34%|[31m▎[0m| 34/100 [00:14<00:25,  2.55epoch/s, best f1 in val this time=0.00334, best f1 in val=0.00334][0m
+ 34%|[31m▎[0m| 34/100 [00:14<00:25,  2.55epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 35%|[31m▎[0m| 35/100 [00:14<00:25,  2.54epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 35%|[31m▎[0m| 35/100 [00:14<00:25,  2.54epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 36%|[31m▎[0m| 36/100 [00:14<00:25,  2.52epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 36%|[31m▎[0m| 36/100 [00:15<00:25,  2.52epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 37%|[31m▎[0m| 37/100 [00:15<00:24,  2.53epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 37%|[31m▎[0m| 37/100 [00:15<00:24,  2.53epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 38%|[31m▍[0m| 38/100 [00:15<00:24,  2.54epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 38%|[31m▍[0m| 38/100 [00:16<00:24,  2.54epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 39%|[31m▍[0m| 39/100 [00:16<00:23,  2.55epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 39%|[31m▍[0m| 39/100 [00:16<00:23,  2.55epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 40%|[31m▍[0m| 40/100 [00:16<00:23,  2.55epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 40%|[31m▍[0m| 40/100 [00:16<00:23,  2.55epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 41%|[31m▍[0m| 41/100 [00:16<00:23,  2.55epoch/s, best f1 in val this time=0.00343, best f1 in val=0.00343][0m
+ 41%|[31m█▏ [0m| 41/100 [00:17<00:23,  2.55epoch/s, best f1 in val this time=0.0063, best f1 in val=0.0063][0m
+ 42%|[31m█▎ [0m| 42/100 [00:17<00:22,  2.55epoch/s, best f1 in val this time=0.0063, best f1 in val=0.0063][0m
+ 42%|[31m█▎ [0m| 42/100 [00:17<00:22,  2.55epoch/s, best f1 in val this time=0.0063, best f1 in val=0.0063][0m
+ 43%|[31m█▎ [0m| 43/100 [00:17<00:22,  2.56epoch/s, best f1 in val this time=0.0063, best f1 in val=0.0063][0m
+ 43%|[31m█▎ [0m| 43/100 [00:18<00:22,  2.56epoch/s, best f1 in val this time=0.0063, best f1 in val=0.0063][0m
+ 44%|[31m█▎ [0m| 44/100 [00:18<00:21,  2.56epoch/s, best f1 in val this time=0.0063, best f1 in val=0.0063][0m
+ 44%|[31m▍[0m| 44/100 [00:18<00:21,  2.56epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 45%|[31m▍[0m| 45/100 [00:18<00:21,  2.56epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 45%|[31m▍[0m| 45/100 [00:18<00:21,  2.56epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 46%|[31m▍[0m| 46/100 [00:18<00:21,  2.56epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 46%|[31m▍[0m| 46/100 [00:19<00:21,  2.56epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 47%|[31m▍[0m| 47/100 [00:19<00:20,  2.57epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 47%|[31m▍[0m| 47/100 [00:19<00:20,  2.57epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 48%|[31m▍[0m| 48/100 [00:19<00:20,  2.51epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 48%|[31m▍[0m| 48/100 [00:20<00:20,  2.51epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 49%|[31m▍[0m| 49/100 [00:20<00:20,  2.52epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 49%|[31m▍[0m| 49/100 [00:20<00:20,  2.52epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 50%|[31m▌[0m| 50/100 [00:20<00:19,  2.53epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 50%|[31m▌[0m| 50/100 [00:20<00:19,  2.53epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 51%|[31m▌[0m| 51/100 [00:20<00:19,  2.53epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 51%|[31m▌[0m| 51/100 [00:21<00:19,  2.53epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 52%|[31m▌[0m| 52/100 [00:21<00:18,  2.53epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 52%|[31m▌[0m| 52/100 [00:21<00:18,  2.53epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 53%|[31m▌[0m| 53/100 [00:21<00:18,  2.51epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 53%|[31m▌[0m| 53/100 [00:22<00:18,  2.51epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 54%|[31m▌[0m| 54/100 [00:22<00:18,  2.49epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 54%|[31m▌[0m| 54/100 [00:22<00:18,  2.49epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 55%|[31m▌[0m| 55/100 [00:22<00:18,  2.44epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 55%|[31m▌[0m| 55/100 [00:22<00:18,  2.44epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 56%|[31m▌[0m| 56/100 [00:22<00:18,  2.41epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 56%|[31m▌[0m| 56/100 [00:23<00:18,  2.41epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 57%|[31m▌[0m| 57/100 [00:23<00:17,  2.42epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 57%|[31m▌[0m| 57/100 [00:23<00:17,  2.42epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 58%|[31m▌[0m| 58/100 [00:23<00:17,  2.45epoch/s, best f1 in val this time=0.00773, best f1 in val=0.00773][0m
+ 58%|[31m█▋ [0m| 58/100 [00:24<00:17,  2.45epoch/s, best f1 in val this time=0.0127, best f1 in val=0.0127][0m
+ 59%|[31m█▊ [0m| 59/100 [00:24<00:16,  2.47epoch/s, best f1 in val this time=0.0127, best f1 in val=0.0127][0m
+ 59%|[31m█▊ [0m| 59/100 [00:24<00:16,  2.47epoch/s, best f1 in val this time=0.0129, best f1 in val=0.0129][0m
+ 60%|[31m█▊ [0m| 60/100 [00:24<00:16,  2.49epoch/s, best f1 in val this time=0.0129, best f1 in val=0.0129][0m
+ 60%|[31m█▊ [0m| 60/100 [00:24<00:16,  2.49epoch/s, best f1 in val this time=0.0129, best f1 in val=0.0129][0m
+ 61%|[31m█▊ [0m| 61/100 [00:24<00:15,  2.46epoch/s, best f1 in val this time=0.0129, best f1 in val=0.0129][0m
+ 61%|[31m█▊ [0m| 61/100 [00:25<00:15,  2.46epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 62%|[31m█▊ [0m| 62/100 [00:25<00:15,  2.48epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 62%|[31m█▊ [0m| 62/100 [00:25<00:15,  2.48epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 63%|[31m█▉ [0m| 63/100 [00:25<00:14,  2.48epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 63%|[31m█▉ [0m| 63/100 [00:26<00:14,  2.48epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 64%|[31m█▉ [0m| 64/100 [00:26<00:14,  2.48epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 64%|[31m█▉ [0m| 64/100 [00:26<00:14,  2.48epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 65%|[31m█▉ [0m| 65/100 [00:26<00:14,  2.50epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 65%|[31m█▉ [0m| 65/100 [00:26<00:14,  2.50epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 66%|[31m█▉ [0m| 66/100 [00:26<00:13,  2.51epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 66%|[31m█▉ [0m| 66/100 [00:27<00:13,  2.51epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 67%|[31m██ [0m| 67/100 [00:27<00:13,  2.51epoch/s, best f1 in val this time=0.0171, best f1 in val=0.0171][0m
+ 67%|[31m███▎ [0m| 67/100 [00:27<00:13,  2.51epoch/s, best f1 in val this time=0.018, best f1 in val=0.018][0m
+ 68%|[31m███▍ [0m| 68/100 [00:27<00:12,  2.49epoch/s, best f1 in val this time=0.018, best f1 in val=0.018][0m
+ 68%|[31m███▍ [0m| 68/100 [00:28<00:12,  2.49epoch/s, best f1 in val this time=0.018, best f1 in val=0.018][0m
+ 69%|[31m███▍ [0m| 69/100 [00:28<00:12,  2.49epoch/s, best f1 in val this time=0.018, best f1 in val=0.018][0m
+ 69%|[31m███▍ [0m| 69/100 [00:28<00:12,  2.49epoch/s, best f1 in val this time=0.018, best f1 in val=0.018][0m
+ 70%|[31m███▌ [0m| 70/100 [00:28<00:11,  2.51epoch/s, best f1 in val this time=0.018, best f1 in val=0.018][0m
+ 70%|[31m███▌ [0m| 70/100 [00:28<00:11,  2.51epoch/s, best f1 in val this time=0.018, best f1 in val=0.018][0m
+ 71%|[31m███▌ [0m| 71/100 [00:28<00:11,  2.52epoch/s, best f1 in val this time=0.018, best f1 in val=0.018][0m
+ 71%|[31m██▏[0m| 71/100 [00:29<00:11,  2.52epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 72%|[31m██▏[0m| 72/100 [00:29<00:11,  2.51epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 72%|[31m██▏[0m| 72/100 [00:29<00:11,  2.51epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 73%|[31m██▏[0m| 73/100 [00:29<00:10,  2.51epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 73%|[31m██▏[0m| 73/100 [00:30<00:10,  2.51epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 74%|[31m██▏[0m| 74/100 [00:30<00:10,  2.47epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 74%|[31m██▏[0m| 74/100 [00:30<00:10,  2.47epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 75%|[31m██▎[0m| 75/100 [00:30<00:10,  2.49epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 75%|[31m██▎[0m| 75/100 [00:30<00:10,  2.49epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 76%|[31m██▎[0m| 76/100 [00:30<00:09,  2.50epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 76%|[31m██▎[0m| 76/100 [00:31<00:09,  2.50epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 77%|[31m██▎[0m| 77/100 [00:31<00:09,  2.50epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 77%|[31m██▎[0m| 77/100 [00:31<00:09,  2.50epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 78%|[31m██▎[0m| 78/100 [00:31<00:08,  2.51epoch/s, best f1 in val this time=0.0235, best f1 in val=0.0235][0m
+ 78%|[31m██▎[0m| 78/100 [00:32<00:08,  2.51epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 79%|[31m██▎[0m| 79/100 [00:32<00:08,  2.51epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 79%|[31m██▎[0m| 79/100 [00:32<00:08,  2.51epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 80%|[31m██▍[0m| 80/100 [00:32<00:07,  2.52epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 80%|[31m██▍[0m| 80/100 [00:32<00:07,  2.52epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 81%|[31m██▍[0m| 81/100 [00:32<00:07,  2.51epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 81%|[31m██▍[0m| 81/100 [00:33<00:07,  2.51epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 82%|[31m██▍[0m| 82/100 [00:33<00:07,  2.52epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 82%|[31m██▍[0m| 82/100 [00:33<00:07,  2.52epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 83%|[31m██▍[0m| 83/100 [00:33<00:06,  2.51epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 83%|[31m██▍[0m| 83/100 [00:34<00:06,  2.51epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 84%|[31m██▌[0m| 84/100 [00:34<00:06,  2.48epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 84%|[31m██▌[0m| 84/100 [00:34<00:06,  2.48epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 85%|[31m██▌[0m| 85/100 [00:34<00:06,  2.48epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 85%|[31m██▌[0m| 85/100 [00:34<00:06,  2.48epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 86%|[31m██▌[0m| 86/100 [00:34<00:05,  2.48epoch/s, best f1 in val this time=0.0256, best f1 in val=0.0256][0m
+ 86%|[31m██▌[0m| 86/100 [00:35<00:05,  2.48epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 87%|[31m██▌[0m| 87/100 [00:35<00:05,  2.44epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 87%|[31m██▌[0m| 87/100 [00:35<00:05,  2.44epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 88%|[31m██▋[0m| 88/100 [00:35<00:04,  2.46epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 88%|[31m██▋[0m| 88/100 [00:36<00:04,  2.46epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 89%|[31m██▋[0m| 89/100 [00:36<00:04,  2.48epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 89%|[31m██▋[0m| 89/100 [00:36<00:04,  2.48epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 90%|[31m██▋[0m| 90/100 [00:36<00:04,  2.49epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 90%|[31m██▋[0m| 90/100 [00:36<00:04,  2.49epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 91%|[31m██▋[0m| 91/100 [00:36<00:03,  2.50epoch/s, best f1 in val this time=0.0303, best f1 in val=0.0303][0m
+ 91%|[31m██▋[0m| 91/100 [00:37<00:03,  2.50epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 92%|[31m██▊[0m| 92/100 [00:37<00:03,  2.50epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 92%|[31m██▊[0m| 92/100 [00:37<00:03,  2.50epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 93%|[31m██▊[0m| 93/100 [00:37<00:02,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 93%|[31m██▊[0m| 93/100 [00:38<00:02,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 94%|[31m██▊[0m| 94/100 [00:38<00:02,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 94%|[31m██▊[0m| 94/100 [00:38<00:02,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 95%|[31m██▊[0m| 95/100 [00:38<00:01,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 95%|[31m██▊[0m| 95/100 [00:38<00:01,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 96%|[31m██▉[0m| 96/100 [00:38<00:01,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 96%|[31m██▉[0m| 96/100 [00:39<00:01,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 97%|[31m██▉[0m| 97/100 [00:39<00:01,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 97%|[31m██▉[0m| 97/100 [00:39<00:01,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 98%|[31m██▉[0m| 98/100 [00:39<00:00,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 98%|[31m██▉[0m| 98/100 [00:40<00:00,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 99%|[31m██▉[0m| 99/100 [00:40<00:00,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+ 99%|[31m██▉[0m| 99/100 [00:40<00:00,  2.51epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+100%|[31m██[0m| 100/100 [00:40<00:00,  2.47epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+100%|[31m██[0m| 100/100 [00:40<00:00,  2.46epoch/s, best f1 in val this time=0.0411, best f1 in val=0.0411][0m
+Training finished.
+Best f1: 4.11%
+Train time: 40.64
+Total time: 60.41
+
+
+Now testing best model on test set...
+
+Train set
+Accuracy1: 82.63%
+Precision1: 15.40%
+Recall1: 81.45%
+F1-Score1: 25.90%
+Accuracy2: 79.84%
+Precision2: 1.26%
+Recall2: 6.67%
+F1-Score2: 2.12%
+
+Validation set
+Accuracy1: 81.45%
+Precision1: 14.22%
+Recall1: 85.98%
+F1-Score1: 24.40%
+Accuracy2: 78.78%
+Precision2: 1.55%
+Recall2: 9.35%
+F1-Score2: 2.65%
+
+Test set
+Accuracy1: 81.73%
+Precision1: 16.99%
+Recall1: 85.71%
+F1-Score1: 28.36%
+Accuracy2: 78.33%
+Precision2: 1.04%
+Recall2: 5.26%
+F1-Score2: 1.74%
+
+TRAIN.PY EXECUTION COMPLETE
